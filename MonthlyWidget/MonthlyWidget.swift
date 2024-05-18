@@ -48,7 +48,7 @@ struct MonthlyWidgetEntryView : View {
                 .fill(.gray.gradient)
                         
             VStack {
-                HStack {
+                HStack(spacing: 4) {
                     Text("⛄️")
                         .font(.title)
                     
@@ -65,6 +65,7 @@ struct MonthlyWidgetEntryView : View {
                     .font(.system(size: 80, weight: .heavy))
                     .foregroundStyle(.white.opacity(0.8))
             }
+            .padding()
         }
     }
 }
