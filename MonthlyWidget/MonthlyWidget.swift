@@ -86,7 +86,6 @@ struct MonthlyWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MonthlyWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
             
         }
         .configurationDisplayName("Monthly Style Widget:")
@@ -118,10 +117,10 @@ extension Date {
 }
 
 struct MockData {
-    static let dayOne = DayEntry(date: dateToDisplay(month: 11, day: 4))
-    static let dayTwo = DayEntry(date: dateToDisplay(month: 11, day: 5))
-    static let dayThree = DayEntry(date: dateToDisplay(month: 11, day: 6))
-    static let dayFour = DayEntry(date: dateToDisplay(month: 11, day: 7))
+    static let dayOne = DayEntry(date: dateToDisplay(month: 5, day: 4))
+    static let dayTwo = DayEntry(date: dateToDisplay(month: 6, day: 5))
+    static let dayThree = DayEntry(date: dateToDisplay(month: 7, day: 6))
+    static let dayFour = DayEntry(date: dateToDisplay(month: 8, day: 7))
 
 
     static func dateToDisplay(month: Int, day: Int) -> Date {
