@@ -17,6 +17,8 @@
 		ECB4CD362BF90A2900A517D7 /* MonthlyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4CD352BF90A2900A517D7 /* MonthlyWidget.swift */; };
 		ECB4CD382BF90A2A00A517D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB4CD372BF90A2A00A517D7 /* Assets.xcassets */; };
 		ECB4CD3C2BF90A2A00A517D7 /* MonthlyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ECB4CD2C2BF90A2900A517D7 /* MonthlyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ECB4CD422BF9442200A517D7 /* MonthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4CD412BF9442200A517D7 /* MonthConfig.swift */; };
+		ECB4CD442BF9458800A517D7 /* Colors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		ECB4CD352BF90A2900A517D7 /* MonthlyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyWidget.swift; sourceTree = "<group>"; };
 		ECB4CD372BF90A2A00A517D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECB4CD392BF90A2A00A517D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB4CD412BF9442200A517D7 /* MonthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthConfig.swift; sourceTree = "<group>"; };
+		ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			children = (
 				ECB4CD332BF90A2900A517D7 /* MonthlyWidgetBundle.swift */,
 				ECB4CD352BF90A2900A517D7 /* MonthlyWidget.swift */,
+				ECB4CD412BF9442200A517D7 /* MonthConfig.swift */,
+				ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */,
 				ECB4CD372BF90A2A00A517D7 /* Assets.xcassets */,
 				ECB4CD392BF90A2A00A517D7 /* Info.plist */,
 			);
@@ -247,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECB4CD342BF90A2900A517D7 /* MonthlyWidgetBundle.swift in Sources */,
+				ECB4CD442BF9458800A517D7 /* Colors+Ext.swift in Sources */,
+				ECB4CD422BF9442200A517D7 /* MonthConfig.swift in Sources */,
 				ECB4CD362BF90A2900A517D7 /* MonthlyWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
