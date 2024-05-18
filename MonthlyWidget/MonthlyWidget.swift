@@ -86,8 +86,9 @@ struct MonthlyWidget: Widget {
             }
         }
         .contentMarginsDisabled()
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Monthly Style Widget:")
+        .description("The theme of the widget changes based on month.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
