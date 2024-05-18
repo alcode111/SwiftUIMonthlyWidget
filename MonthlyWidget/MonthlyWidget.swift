@@ -50,9 +50,20 @@ struct MonthlyWidgetEntryView : View {
             VStack {
                 HStack {
                     Text("⛄️")
+                        .font(.title)
                     
-                    Text(entry.date, style: .time)
+                    Text(entry.date.weekdayDisplayFormat)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .minimumScaleFactor(0.6)
+                        .foregroundStyle(.black.opacity(0.6))
+                    
+                    Spacer()
                 }
+                
+                Text(entry.date.dayDisplayFormat)
+                    .font(.system(size: 80, weight: .heavy))
+                    .foregroundStyle(.white.opacity(0.8))
             }
         }
     }
@@ -83,4 +94,16 @@ struct MonthlyWidget: Widget {
 } timeline: {
     DayEntry(date: .now, emoji: "😀")
     DayEntry(date: .now, emoji: "🤩")
+}
+
+extension Date {
+    var weekdayDisplayFormat: String {
+        self.formatted(.dateTime.weekday(.wide))
+    }
+}
+
+extension Date {
+    var dayDisplayFormat: String {
+        self.formatted(.dateTime.day())
+    }
 }
