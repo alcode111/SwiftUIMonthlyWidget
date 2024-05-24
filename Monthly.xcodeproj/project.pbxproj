@@ -19,8 +19,6 @@
 		ECB4CD3C2BF90A2A00A517D7 /* MonthlyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ECB4CD2C2BF90A2900A517D7 /* MonthlyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ECB4CD422BF9442200A517D7 /* MonthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4CD412BF9442200A517D7 /* MonthConfig.swift */; };
 		ECB4CD442BF9458800A517D7 /* Colors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */; };
-		ECFF95A62C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = ECFF95A52C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition */; };
-		ECFF95A72C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = ECFF95A52C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +60,6 @@
 		ECB4CD392BF90A2A00A517D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECB4CD412BF9442200A517D7 /* MonthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthConfig.swift; sourceTree = "<group>"; };
 		ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Ext.swift"; sourceTree = "<group>"; };
-		ECFF95A52C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MonthlyWidgetIntents.intentdefinition; sourceTree = "<group>"; };
 		ECFF95A82C00C47B007CCCBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +140,6 @@
 				ECB4CD432BF9458800A517D7 /* Colors+Ext.swift */,
 				ECB4CD372BF90A2A00A517D7 /* Assets.xcassets */,
 				ECB4CD392BF90A2A00A517D7 /* Info.plist */,
-				ECFF95A52C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition */,
 			);
 			path = MonthlyWidget;
 			sourceTree = "<group>";
@@ -250,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				845386A72BF377F8008969EB /* ContentView.swift in Sources */,
-				ECFF95A62C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition in Sources */,
 				845386A52BF377F8008969EB /* MonthlyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +256,6 @@
 			files = (
 				ECB4CD342BF90A2900A517D7 /* MonthlyWidgetBundle.swift in Sources */,
 				ECB4CD442BF9458800A517D7 /* Colors+Ext.swift in Sources */,
-				ECFF95A72C00C437007CCCBB /* MonthlyWidgetIntents.intentdefinition in Sources */,
 				ECB4CD422BF9442200A517D7 /* MonthConfig.swift in Sources */,
 				ECB4CD362BF90A2900A517D7 /* MonthlyWidget.swift in Sources */,
 			);

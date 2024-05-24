@@ -7,17 +7,21 @@
 
 import WidgetKit
 import SwiftUI
+import AppIntents
 
-struct Provider: IntentTimelineProvider {
-    func getSnapshot(for configuration: ChangeFontIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
-        let entry = DayEntry(date: Date(), showFunFont: false)
-        completion(entry)
+struct Provider: AppIntentTimelineProvider {
+    func placeholder(in context: Context) -> DayEntry {
+        DayEntry(date: Date(), showFunFont: false)
     }
     
-    func getTimeline(for configuration: ChangeFontIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
+    func snapshot(for configuration: ChangeFontIntent, in context: Context) async -> DayEntry {
+        return DayEntry(date: Date(), showFunFont: false)
+    }
+    
+    func timeline(for configuration: ChangeFontIntent, in context: Context) async -> Timeline<DayEntry> {
         var entries: [DayEntry] = []
         
-        let showFunFont = configuration.funFont == 1
+        let showFunFont = configuration.funFont
         
         // Generate a timeline consisting of seven entries a day apart, starting from the current date.
         let currentDate = Date()
@@ -28,14 +32,8 @@ struct Provider: IntentTimelineProvider {
             entries.append(entry)
         }
         
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        return Timeline(entries: entries, policy: .atEnd)
     }
-
-    func placeholder(in context: Context) -> DayEntry {
-        DayEntry(date: Date(), showFunFont: false)
-    }
-    
 }
 
 struct DayEntry: TimelineEntry {
@@ -89,7 +87,7 @@ struct MonthlyWidget: Widget {
     let kind: String = "MonthlyWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ChangeFontIntent.self, provider: Provider()) { entry in
+        AppIntentConfiguration(kind: kind, intent: ChangeFontIntent.self, provider: Provider()) { entry in
             MonthlyWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Monthly Style Widget:")
@@ -108,17 +106,15 @@ struct MonthlyWidget: Widget {
     MockData.dayFour
 }
 
-extension Date {
-    var weekdayDisplayFormat: String {
-        self.formatted(.dateTime.weekday(.wide))
-    }
+struct ChangeFontIntent: AppIntent, WidgetConfigurationIntent {
+    static var title: LocalizedStringResource = "Fun Font"
+    static var description: IntentDescription? = "Switch to a fun font"
+    
+    @Parameter(title: "Fun Font")
+    var funFont: Bool
+    
 }
 
-extension Date {
-    var dayDisplayFormat: String {
-        self.formatted(.dateTime.day())
-    }
-}
 
 struct MockData {
     static let dayOne = DayEntry(date: dateToDisplay(month: 5, day: 4), showFunFont: false)
@@ -134,5 +130,18 @@ struct MockData {
                                         day: day)
 
         return Calendar.current.date(from: components)!
+    }
+}
+
+
+extension Date {
+    var weekdayDisplayFormat: String {
+        self.formatted(.dateTime.weekday(.wide))
+    }
+}
+
+extension Date {
+    var dayDisplayFormat: String {
+        self.formatted(.dateTime.day())
     }
 }
